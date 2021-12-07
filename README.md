@@ -2,3 +2,6 @@
 
 * Assertions with failure messages
 * Grouped and Dependent Assertions
+* Skipping tests
+* Display test names
+* Testing expected exceptions
