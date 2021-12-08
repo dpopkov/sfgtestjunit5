@@ -9,3 +9,4 @@
 * Assumptions
 * Conditional test execution
 * Using AssertJ
+* Using Hamcrest

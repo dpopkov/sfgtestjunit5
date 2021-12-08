@@ -2,6 +2,8 @@ package learn.sfg.sfgtestjunit5.model;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerTest {
@@ -22,5 +24,12 @@ class OwnerTest {
                         () -> assertEquals("1234123123", owner.getTelephone(), "Telephone did not match")
                 )
         );
+    }
+
+    @Test
+    void testUsingHamcrest() {
+        Owner owner = new Owner(1L, "Jane", "Doe");
+        owner.setCity("Key East");
+        assertThat(owner.getCity(), is("Key East"));
     }
 }
