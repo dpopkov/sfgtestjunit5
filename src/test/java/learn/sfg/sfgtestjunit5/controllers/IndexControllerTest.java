@@ -1,9 +1,8 @@
 package learn.sfg.sfgtestjunit5.controllers;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.time.Duration;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,6 +29,29 @@ class IndexControllerTest {
         assertThrows(ValueNotFoundException.class, () -> {
             controller.oupsHandler();
         });
+    }
+
+    @Disabled("Demo of timeout that should fail")
+    @Test
+    void testTimeout() {
+        assertTimeout(Duration.ofMillis(100), () -> {
+            Thread.sleep(5000);
+            System.out.println("I got here");
+        });
+    }
+
+    @Disabled("Demo of timeout that should fail")
+    @Test
+    void testTimeoutPreemptively() {
+        assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
+            Thread.sleep(5000);
+            System.out.println("I got here");
+        });
+    }
+
+    @Test
+    void testAssumptionTrue() {
+        Assumptions.assumeTrue("sfg".equalsIgnoreCase(System.getenv("SFG_RUNTIME")));
     }
 
     private String makeExpensiveMessage() {

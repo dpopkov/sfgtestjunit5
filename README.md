@@ -5,3 +5,5 @@
 * Skipping tests
 * Display test names
 * Testing expected exceptions
+* Testing timeouts
+* Assumptions
