@@ -8,3 +8,4 @@
 * Testing timeouts
 * Assumptions
 * Conditional test execution
+* Using AssertJ

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.condition.*;
 import java.time.Duration;
 import java.util.Random;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IndexControllerTest {
@@ -21,6 +22,12 @@ class IndexControllerTest {
     @Test
     void index() {
         assertEquals("index", controller.index(), "Wrong View Returned");
+
+        // Using AssertJ
+        assertThat(controller.index())
+                .startsWith("ind")
+                .endsWith("ex")
+                .isEqualTo("index");
     }
 
     @Test
