@@ -1,6 +1,7 @@
 package learn.sfg.sfgtestjunit5.controllers;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 import java.util.Random;
@@ -52,6 +53,31 @@ class IndexControllerTest {
     @Test
     void testAssumptionTrue() {
         Assumptions.assumeTrue("sfg".equalsIgnoreCase(System.getenv("SFG_RUNTIME")));
+    }
+
+    @Test
+    @EnabledOnOs(OS.LINUX)
+    void testMeOnLinux() {
+    }
+
+    @Test
+    @EnabledOnOs(OS.WINDOWS)
+    void testMeOnWindows() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_11)
+    void testMeOnJava11() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_17)
+    void testMeOnJava17() {
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "SFG_RUNTIME", matches = "sfg")
+    void testMeIfEnvironmentVariable() {
     }
 
     private String makeExpensiveMessage() {

@@ -7,3 +7,4 @@
 * Testing expected exceptions
 * Testing timeouts
 * Assumptions
+* Conditional test execution
