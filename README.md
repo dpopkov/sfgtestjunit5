@@ -13,3 +13,6 @@
 * Tagging and Filtering Tests
     * Edit configurations -> add JUNit config -> Test kind: Tags -> Tag expression
 * Nested tests
+* Using tagged test interfaces
+    * Create interface annotated with @Tag
+    * Add the annotated interface it as a marker to test classes

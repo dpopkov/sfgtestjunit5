@@ -1,5 +1,6 @@
 package learn.sfg.sfgtestjunit5.controllers;
 
+import learn.sfg.sfgtestjunit5.ControllerTests;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 
@@ -9,8 +10,7 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("controllers")
-class IndexControllerTest {
+class IndexControllerTest implements ControllerTests {
 
     IndexController controller;
 
