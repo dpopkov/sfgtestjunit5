@@ -10,3 +10,5 @@
 * Conditional test execution
 * Using AssertJ
 * Using Hamcrest
+* Tagging and Filtering Tests
+    * Edit configurations -> add JUNit config -> Test kind: Tags -> Tag expression

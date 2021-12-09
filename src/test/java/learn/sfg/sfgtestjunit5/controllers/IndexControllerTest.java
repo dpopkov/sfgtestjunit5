@@ -9,6 +9,7 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("controllers")
 class IndexControllerTest {
 
     IndexController controller;

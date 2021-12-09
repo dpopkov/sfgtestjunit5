@@ -2,10 +2,12 @@ package learn.sfg.sfgtestjunit5.services.springdatajpa;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("service")
 @Disabled("Disabled until Mocking is learned")
 class OwnerSDJpaServiceTest {
 

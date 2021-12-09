@@ -1,11 +1,13 @@
 package learn.sfg.sfgtestjunit5.model;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("model")
 class OwnerTest {
 
     @Test
