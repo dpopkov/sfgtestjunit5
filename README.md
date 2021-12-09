@@ -16,3 +16,6 @@
 * Using tagged test interfaces
     * Create interface annotated with @Tag
     * Add the annotated interface it as a marker to test classes
+* Using default test methods
+    * Create default method in test interface
+    * Use @org.junit.jupiter.api.TestInstance annotation
