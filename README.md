@@ -28,3 +28,6 @@
         * TestReporter
 * Parameterized tests
     * Value Source
+    * Enum Source
+    * CSV Source
+    * CSV File Source
