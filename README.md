@@ -19,3 +19,10 @@
 * Using default test methods
     * Create default method in test interface
     * Use @org.junit.jupiter.api.TestInstance annotation
+* Repeating tests
+* JUnit5 dependency injection in tests
+    * Parameter Resolver API - allows to inject parameters into test methods
+    * 3 built-in resolvers:
+        * TestInfo
+        * RepetitionInfo
+        * TestReporter
