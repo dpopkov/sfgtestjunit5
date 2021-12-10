@@ -27,4 +27,22 @@ class PersonTest implements ModelTests {
     void myRepeatedTestWithDi(TestInfo testInfo, RepetitionInfo repetitionInfo) {
         System.out.println(testInfo.getDisplayName() + ": " + repetitionInfo.getCurrentRepetition());
     }
+
+    interface RepeatedTestInfoMarker {
+        @BeforeEach
+        default void beforeEachDisplayTestInfo(TestInfo testInfo, RepetitionInfo repetitionInfo) {
+            System.out.println(testInfo.getDisplayName() + ": " + repetitionInfo.getCurrentRepetition());
+        }
+    }
+
+    @DisplayName("Person Assignment Nested Test - ")
+    @Nested
+    class PersonNestedTest implements RepeatedTestInfoMarker {
+
+        @DisplayName("Assignment Nested Repeated Test")
+        @RepeatedTest(value = 3, name = "{currentRepetition} {displayName} of {totalRepetitions}")
+        void myNestedRepeatedTest() {
+            System.out.println("inside myNestedRepeatedTest()");
+        }
+    }
 }
