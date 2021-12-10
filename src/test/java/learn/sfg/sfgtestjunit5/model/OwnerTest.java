@@ -4,10 +4,9 @@ import learn.sfg.sfgtestjunit5.ModelTests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.EnumSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
+
+import java.util.stream.Stream;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
@@ -68,6 +67,28 @@ class OwnerTest implements ModelTests {
     @ParameterizedTest(name = "{displayName} - [{index}] : {argumentsWithNames}")
     @CsvFileSource(resources = "/input.csv", numLinesToSkip = 1)
     void csvFromFileTest(String state, int value1, int value2) {
+        System.out.printf("state=%s, value1=%d, value2=%d%n", state, value1, value2);
+    }
+
+    static Stream<Arguments> getArgs() {
+        return Stream.of(
+                Arguments.of("FL", 101, 11),
+                Arguments.of("OH", 202, 22),
+                Arguments.of("MI", 303, 33)
+        );
+    }
+
+    @DisplayName("Method Provider Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] : {argumentsWithNames}")
+    @MethodSource("getArgs")
+    void fromMethodTest(String state, int value1, int value2) {
+        System.out.printf("state=%s, value1=%d, value2=%d%n", state, value1, value2);
+    }
+
+    @DisplayName("Custom Provider Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] : {argumentsWithNames}")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void fromCustomProvider(String state, int value1, int value2) {
         System.out.printf("state=%s, value1=%d, value2=%d%n", state, value1, value2);
     }
 }

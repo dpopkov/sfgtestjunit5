@@ -31,3 +31,5 @@
     * Enum Source
     * CSV Source
     * CSV File Source
+    * Method Provider
+    * Custom Provider
