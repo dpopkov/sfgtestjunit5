@@ -26,3 +26,5 @@
         * TestInfo
         * RepetitionInfo
         * TestReporter
+* Parameterized tests
+    * Value Source

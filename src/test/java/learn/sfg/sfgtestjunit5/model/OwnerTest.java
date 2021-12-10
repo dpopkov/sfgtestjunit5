@@ -1,7 +1,10 @@
 package learn.sfg.sfgtestjunit5.model;
 
 import learn.sfg.sfgtestjunit5.ModelTests;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
@@ -32,5 +35,12 @@ class OwnerTest implements ModelTests {
         Owner owner = new Owner(1L, "Jane", "Doe");
         owner.setCity("Key East");
         assertThat(owner.getCity(), is("Key East"));
+    }
+
+    @DisplayName("Value Source Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] : {argumentsWithNames}")
+    @ValueSource(strings = {"Spring", "Framework", "Genius"})
+    void testValueSource(String value) {
+        System.out.println("value = " + value);
     }
 }
