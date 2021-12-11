@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/dpopkov/sfgtestjunit5/tree/main.svg?style=svg)](https://circleci.com/gh/dpopkov/sfgtestjunit5/tree/main)
+
 # Testing Java with JUnit 5
 
 * Assertions with failure messages
