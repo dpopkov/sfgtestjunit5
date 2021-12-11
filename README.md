@@ -39,6 +39,8 @@
         * run `mvn clean verify`
     * Maven Surefire Test Reporting [Configuration](#maven-surefire-test-reporting-configuration)
         * run `mvn clean site`
+    * Executing tests with Tags in Maven
+        * `<configuration><groups>controllers</groups></configuration>`
 
 ### Maven Failsafe Plugin configuration
 ```xml
