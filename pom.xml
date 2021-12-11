@@ -77,6 +77,11 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.8.2</version> <!-- Upgrading version to be compatible with maven-surefire-report-plugin -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.2</version>
                 <executions>
@@ -90,5 +95,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>

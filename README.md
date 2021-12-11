@@ -35,8 +35,10 @@
     * Custom Provider
 * JUnit extensions
 * Test Execution
-    * [Maven Failsafe Plugin configuration](#maven-failsafe-plugin-configuration)
-
+    * Maven Failsafe Plugin [Configuration](#maven-failsafe-plugin-configuration)
+        * run `mvn clean verify`
+    * Maven Surefire Test Reporting [Configuration](#maven-surefire-test-reporting-configuration)
+        * run `mvn clean site`
 
 ### Maven Failsafe Plugin configuration
 ```xml
@@ -53,4 +55,25 @@
         </execution>
     </executions>
 </plugin>
+```
+### Maven Surefire Test Reporting Configuration
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.8.2</version>    <!-- Upgrading version -->
+        </plugin>
+    </plugins>
+</build>
+<reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-report-plugin</artifactId>
+            <version>2.22.2</version>
+        </plugin>
+    </plugins>
+</reporting>
 ```
